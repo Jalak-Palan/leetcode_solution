@@ -1,15 +1,12 @@
-// Last updated: 5/13/2026, 1:38:50 PM
+// Last updated: 5/13/2026, 1:49:04 PM
 1class Solution {
 2public:
-3    int maximumProduct(vector<int>& nums) {
-4        sort(nums.begin(), nums.end());
-5
-6        int n = nums.size();
-7
-8        int a = nums[n-1]* nums[n-2]* nums[n-3];
-9
-10        int b = nums[0]* nums[1] * nums[n-1];
-11
-12        return max(a,b);
-13    }
-14};
+3    string toLowerCase(string s) {
+4        for(int i =0; i<s.size();i++){
+5            if(s[i]>='A' && s[i]<='Z'){
+6                s[i] = s[i] + 32;
+7            }
+8        }
+9            return s;
+10    }
+11};
