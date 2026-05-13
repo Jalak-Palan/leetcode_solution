@@ -1,23 +1,15 @@
-// Last updated: 5/13/2026, 1:17:28 PM
+// Last updated: 5/13/2026, 1:38:50 PM
 1class Solution {
 2public:
-3    bool detectCapitalUse(string word) {
-4        int cap = 0;
+3    int maximumProduct(vector<int>& nums) {
+4        sort(nums.begin(), nums.end());
 5
-6        for(char ch : word){
-7            if(isupper(ch)){
-8                cap++;
-9            }
-10        }
-11        if(cap == word.size()){
-12            return true;
-13        }
-14        if(cap == 0){
-15            return true;
-16        }
-17        if(cap == 1 && isupper(word[0])){
-18            return true;
-19        }
-20        return false;
-21    }
-22};
+6        int n = nums.size();
+7
+8        int a = nums[n-1]* nums[n-2]* nums[n-3];
+9
+10        int b = nums[0]* nums[1] * nums[n-1];
+11
+12        return max(a,b);
+13    }
+14};
